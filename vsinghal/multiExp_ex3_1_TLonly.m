@@ -1,6 +1,9 @@
-function multiExp = multiExp_ex2_1_TXonly()
-    multiExp.Name='multiExp_ex2_1_TXonly';
-    syms k_fm krm ktx kcm kfp krp kterm krn kfn Et Pt DtEx2  N0ex2 alph 
+function multiExp = multiExp_ex3_1_TLonly()
+    multiExp.Name='multiExp_ex3_1_TL_only';
+    syms kfp krp kterm krn kfn alph ktx k_fm krm kfR krR kcm ktermTL betaparam 
+    syms kfAA krAA kTL 
+    syms P0 D0Ex3 N0 R0 AA0Ex3 E0
+    
     multiExp.Nexp=4;
     
     multiExp.U = [0;...
@@ -18,11 +21,11 @@ function multiExp = multiExp_ex2_1_TXonly()
 %                    0,0, 2*Dt0Exp2, 0 0 0,  N0exp2,...
 %                    0,0, 2*Dt0Exp2, 0 0 0,  2*N0exp2];
                
-    multiExp.IC = [0,0, 0.5*DtEx2, 0 0 0,  0.5*N0ex2,...
-                   0,0, 0.5*DtEx2, 0 0 0,  N0ex2,...
-                   0,0, DtEx2, 0 0 0,  0.5*N0ex2,...
-                   0,0, DtEx2, 0 0 0,  N0ex2];
+    multiExp.IC = [P0 0.5*D0Ex3 0 0 0 N0 0 R0 0 0 0 0.5*AA0Ex3 0 0 0 0 0 E0, ...
+        P0 0.5*D0Ex3 0 0 0 N0 0 R0 0 0 0 AA0Ex3 0 0 0 0 0 E0, ...
+        P0 D0Ex3 0 0 0 N0 0 R0 0 0 0 0.5*AA0Ex3 0 0 0 0 0 E0, ...
+        P0 D0Ex3 0 0 0 N0 0 R0 0 0 0 AA0Ex3 0 0 0 0 0 E0];
                
-    multiExp.P=[k_fm krm ktx kcm kfp krp kterm krn kfn Et Pt DtEx2  N0ex2, alph];
-    multiExp.Par=[ktx krp kterm krn Pt];
+    multiExp.P=[kfp krp kterm krn kfn alph ktx k_fm krm kfR krR kcm ktermTL betaparam  kfAA krAA kTL  P0 D0Ex3 N0 R0 AA0Ex3 E0];
+    multiExp.Par=[krR ktermTL krAA kTL R0];
 end

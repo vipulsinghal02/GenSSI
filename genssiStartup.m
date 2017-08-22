@@ -10,3 +10,4 @@ addpath(GenSSIDir);
 addpath(fullfile(GenSSIDir,'Auxiliary'));
 addpath(fullfile(GenSSIDir,'Examples'));
 addpath(fullfile(GenSSIDir,'Docu'));
+addpath(fullfile(GenSSIDir,'vsinghal'));

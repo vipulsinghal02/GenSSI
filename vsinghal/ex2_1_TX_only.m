@@ -92,7 +92,7 @@ function model = ex2_1_TX_only()
     %   MODEL RELATED DATA  %
     %%%%%%%%%%%%%%%%%%%%%%%%%
 
-    model.Nder=4;            % Number of derivatives
+    model.Nder=7;            % Number of derivatives
     model.Neq=7;             % Number of states 
     model.X=[m C D PD PDN PDt N];
     model.Noc=0;             % Number of controls
@@ -115,8 +115,8 @@ function model = ex2_1_TX_only()
     %  PARAMETERS CONSIDERED FOR IDENTIFIABILITY   %
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     model.P=[k_fm krm ktx kcm kfp krp kterm krn kfn Et Pt Dt N0 alph];
-    model.Par=[ktx krp kterm krn Pt Dt N0];% 
-    model.Npar=7;            % Number of model parameters
+    model.Par=[ktx krp kterm krn Pt];% 
+    model.Npar=5;            % Number of model parameters
     
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     %   GENERATING SERIES FUNCTION     %
